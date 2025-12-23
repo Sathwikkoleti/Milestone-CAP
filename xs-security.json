@@ -1,5 +1,34 @@
 {
-  "scopes": [],
+  "xsappname": "Sathwik",
+  "tenant-mode": "dedicated",
+
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.SO_Manager",
+      "description": "Sales Order Manager - Full Access"
+    },
+    {
+      "name": "$XSAPPNAME.SO_Employee",
+      "description": "Sales Order Employee - Read Only"
+    }
+  ],
+
   "attributes": [],
-  "role-templates": []
+
+  "role-templates": [
+    {
+      "name": "SO_Manager",
+      "description": "Sales Order Manager Role",
+      "scope-references": [
+        "$XSAPPNAME.SO_Manager"
+      ]
+    },
+    {
+      "name": "SO_Employee",
+      "description": "Sales Order Employee Role",
+      "scope-references": [
+        "$XSAPPNAME.SO_Employee"
+      ]
+    }
+  ]
 }
